@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AnimalMove : MonoBehaviour
 {
-    public GameObject animal;
     public float speed = 3;
     public int hp = 1;
     private int count = 0;
@@ -18,10 +17,10 @@ public class AnimalMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        if(transform.position.z < -5)
+        /*if(transform.position.z < -5)
         {
             transform.position = new Vector3(Random.Range(-12, 13), 0, Random.Range(20, 25));
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,8 +28,7 @@ public class AnimalMove : MonoBehaviour
         count++;
         if (count >= hp)
         {
-            transform.position = new Vector3(Random.Range(-12, 13), 0, Random.Range(30, 38));
-            count = 0;
+            Destroy(gameObject);
         }
     }
 }

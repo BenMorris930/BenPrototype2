@@ -18,7 +18,7 @@ public class AppleForward : MonoBehaviour
         if (transform.position.z > 20) Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider Animal)
     {
         Destroy(gameObject);
     }
